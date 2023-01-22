@@ -15,8 +15,11 @@ export class Recipe {
     required: true,
   })
   ingredients: string;
-  @Prop()
-  tags?: string;
+  @Prop({
+    type: Array<string>,
+    default: [],
+  })
+  tags: string[];
   @Prop({
     required: true,
   })
@@ -29,12 +32,9 @@ export class Recipe {
     required: true,
   })
   yield: number;
+  @Prop()
+  steps?: string;
   @Prop({
-    required: true,
-  })
-  steps: string;
-  @Prop({
-    required: true,
     default: -1,
   })
   rating: number;
